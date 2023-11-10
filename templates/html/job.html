@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+      <form class="input-group mt-5 w-75 mx-auto shadow-lg" method="get">
+        <input name="job_title" class="form-control col" type="search" placeholder="Search By Job Title" aria-label="Search">
+        <input name="job_location" class="form-control col" type="search" placeholder="Search By Location" aria-label="Search">
+        <input name="job_type" class="form-control col" type="search" placeholder="Search By Job Type" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 col" type="submit">Search</button>
+      </form>
+      <div>
+          {%for j in jobs%}
+          <div class="container mt-4 col-5 mx-auto card shadow-lg card w-75">
+              <div class="card-body">
+                <h5 class="card-title">{{j.job_title}}</h5>
+                <p class="card-text">{{j.job_description}}</p>
+                <p class="card-text">{{j.job_type}}</p>
+                <p class="card-text">{{j.job_location}}</p>
+                <a href="#" class="btn btn-outline-success">Apply</a>
+              </div>
+          </div>
+          {%endfor%}
+      </div>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+  <div class="container mt-4">
+    <form class="col-5 mx-auto card p-3 shadow-lg" method="post">
+      {% csrf_token %}
+      <h1 class="d-flex justify-content-center">SignUp</h1>
+      <hr>
+      <div class="mb-2">
+        <label for="exampleInputName" class="form-label">Full Name</label>
+        <input name="full_name" type="text" class="form-control" id="exampleInputName" required>
+      </div>
+      <div class="mb-2">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-2">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input name="password" type="password" class="form-control" id="exampleInputPassword1" required>
+      </div>
+      <div class="mb-2">
+        <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+        <input name="confirm_password" type="password" class="form-control" id="exampleInputPassword2" required>
+      </div>
+      <button type="submit" class="btn btn-outline-success">Signup</button>
+      <span>Already have an account. <a href="/login/">Login here</a></span>
+    </form>
+  </div>
+
+{% endblock content %}
